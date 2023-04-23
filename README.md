@@ -27,4 +27,4 @@ Estimated completion date: 05/10/2023
 - [ ] Chapter 17:
 - [ ] Chapter 18:
 - [ ] Chapter 19:
-- [ ] Chapter 20:p
+- [ ] Chapter 20:

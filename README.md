@@ -4,7 +4,8 @@ Record my reading progress for [*The Rust Programming Language*](https://doc.rus
 
 Estimated completion date: 05/10/2023
 
-
+https://rust-book.cs.brown.edu/ 
+This interactive version from Brown University turns out to be a better source. It clearly shows memory layouts for some confusing code snippets, and has quizzes for comprehension check.
 
 ## Progress Bar
 

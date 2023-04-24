@@ -32,10 +32,10 @@ fn run_illini_book(illini_book: IlliniBook) {
     println!("{}", illini_book.count_groups_relation("128"));
     println!("{}", illini_book.count_groups_relation("124"));
     println!("{}", illini_book.count_groups_relation("173"));
-    println!("{}", illini_book.count_groups_relations(vec!["128", "173"]));
+    println!("{}", illini_book.count_groups_relations(&["128", "173"]));
     println!(
         "{}",
-        illini_book.count_groups_relations(vec!["128", "124", "173"])
+        illini_book.count_groups_relations(&["128", "124", "173"])
     );
 }
 

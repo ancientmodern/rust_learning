@@ -165,24 +165,24 @@ impl IlliniBook {
 
     pub fn count_groups(&self) -> u32 {
         let mut count = 0u32;
-        let mut visitied = HashSet::new();
+        let mut visited = HashSet::new();
 
         for (node, _edges) in &self.graph {
-            if visitied.contains(node) {
+            if visited.contains(node) {
                 continue;
             }
 
             let mut q = VecDeque::new();
             q.push_back(node);
-            visitied.insert(node);
+            visited.insert(node);
             count += 1;
 
             while let Some(curr_node) = q.pop_front() {
                 if let Some(neighbors) = self.graph.get(&curr_node) {
                     for (neighbor, _relation) in neighbors {
-                        if !visitied.contains(neighbor) {
+                        if !visited.contains(neighbor) {
                             q.push_back(neighbor);
-                            visitied.insert(neighbor);
+                            visited.insert(neighbor);
                         }
                     }
                 }
@@ -194,24 +194,24 @@ impl IlliniBook {
 
     pub fn count_groups_relation(&self, relationship: &str) -> u32 {
         let mut count = 0u32;
-        let mut visitied = HashSet::new();
+        let mut visited = HashSet::new();
 
         for (node, _edges) in &self.graph {
-            if visitied.contains(node) {
+            if visited.contains(node) {
                 continue;
             }
 
             let mut q = VecDeque::new();
             q.push_back(node);
-            visitied.insert(node);
+            visited.insert(node);
             count += 1;
 
             while let Some(curr_node) = q.pop_front() {
                 if let Some(neighbors) = self.graph.get(&curr_node) {
                     for (neighbor, relation) in neighbors {
-                        if relation == relationship && !visitied.contains(neighbor) {
+                        if relation == relationship && !visited.contains(neighbor) {
                             q.push_back(neighbor);
-                            visitied.insert(neighbor);
+                            visited.insert(neighbor);
                         }
                     }
                 }
@@ -221,28 +221,27 @@ impl IlliniBook {
         count
     }
 
-    pub fn count_groups_relations(&self, relationships: Vec<&str>) -> u32 {
+    pub fn count_groups_relations(&self, relationships: &[&str]) -> u32 {
         let mut count = 0u32;
-        let mut visitied = HashSet::new();
+        let mut visited = HashSet::new();
 
         for (node, _edges) in &self.graph {
-            if visitied.contains(node) {
+            if visited.contains(node) {
                 continue;
             }
 
             let mut q = VecDeque::new();
             q.push_back(node);
-            visitied.insert(node);
+            visited.insert(node);
             count += 1;
 
             while let Some(curr_node) = q.pop_front() {
                 if let Some(neighbors) = self.graph.get(&curr_node) {
                     for (neighbor, relation) in neighbors {
-                        if relationships.contains(&relation.as_str())
-                            && !visitied.contains(neighbor)
+                        if relationships.contains(&relation.as_str()) && !visited.contains(neighbor)
                         {
                             q.push_back(neighbor);
-                            visitied.insert(neighbor);
+                            visited.insert(neighbor);
                         }
                     }
                 }

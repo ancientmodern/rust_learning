@@ -28,3 +28,16 @@ Estimated completion date: 05/10/2023
 - [ ] Chapter 18:
 - [ ] Chapter 19:
 - [ ] Chapter 20:
+
+## Cheat Book
+### Reference
+1. Use references when you want to share access to a value without transferring ownership. This can help reduce memory usage and avoid unnecessary cloning of values.
+2. Use mutable references (`&mut`) when you need to modify the borrowed value. Remember that you can have multiple immutable references or only one mutable reference at a time.
+3. When iterating over a collection, you can use references to avoid moving or copying the elements. For example:
+    ```rust
+    for (key, value) in &my_hashmap {
+        // ...
+    }
+    ```
+4. When using methods that borrow values, such as `get()` for a `HashMap`, the returned value will be a reference. You should use the appropriate reference type when working with these values.
+5. When passing values to a function, prefer using references if the function doesn't need to own the value or if you want to avoid cloning or copying the value.

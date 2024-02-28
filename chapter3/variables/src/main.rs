@@ -10,6 +10,7 @@ fn main() {
     // 2. `const` can be declared in any scope, including global scope
     // 3. `const` can only be set to a constant expression, not the result of
     //     a function call or any other value that could only be computed at runtime
+    // `const` is similar to `constexpr` in C++, but lack of many functionalities at this time
     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
     println!("Three hours in seconds: {THREE_HOURS_IN_SECONDS}");
 
@@ -22,8 +23,8 @@ fn main() {
     }
     println!("The value of x is: {x}"); // x == 6
 
-    // Shadowing can be used to change the type of a variable
-    let spaces = "   ";
+    // Shadowing can be used to change the type of variable, as we did in the guessing game
+    let spaces = "    ";
     let spaces = spaces.len();
     println!("The length of spaces is: {spaces}");
 }

@@ -5,13 +5,14 @@
 fn main() {
     print_labeled_measurement(5, 'h');
 
-    // statement and expression
+    // Statements are instructions that perform some action and do not return a value.
+    // Expressions evaluate to a resultant value.
     // let x = (let y = 6); error: expected expression, found statement (`let`)
     let y = {
         let x = 3;
         x + 1
     }; // this is an expression
-    println!("The value of y is: {}", y);
+    println!("The value of y is: {}", y); // y == 4
 
     let x = plus_one(5);
 

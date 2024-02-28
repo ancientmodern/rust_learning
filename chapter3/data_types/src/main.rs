@@ -5,6 +5,11 @@ fn main() {
     let guess: u32 = "42".parse().expect("Not a number!");
     println!("guess: {}", guess);
 
+    // OVERFLOW
+    // this expression will panic in debug mode and return 255 in release mode
+    let x : u8 = -1;
+    println!("x: {}", x);
+
     // CHAR
     let c = 'z';
     let z: char = 'ℤ'; // with explicit type annotation
@@ -39,7 +44,7 @@ fn main() {
         .parse()
         .expect("Index entered was not a number");
 
-    // this will panic if the index is out of bounds
+    // this will panic if the index is out of bounds (unlike C)
     let element = a[index];
 
     println!("The value of the element at index {index} is: {element}");

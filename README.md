@@ -16,7 +16,7 @@ This interactive version from Brown University turns out to be a better source. 
 - [x] Chapter 5: Struct (04/21/2023)
 - [x] Chapter 6: Enum (04/22/2023)
 - [x] Chapter 7: Packages, Crates, and Modules (04/23/2023)
-- [ ] Chapter 8:
+- [X] Chapter 8: Common Collections (04/24/2023)
 - [ ] Chapter 9:
 - [ ] Chapter 10:
 - [ ] Chapter 11:
